@@ -55,9 +55,6 @@
                     </g>
                 </svg>
                 }
-
-
-
                 <p>Favorites</p>
             </button>
         </div>
@@ -100,23 +97,13 @@
                     </g>
                 </svg>
                 }
-
-
-
                 <p>Trash</p>
             </button>
         </div>
     </div>
     <div>
-        <ul>
-            @for (item of (this.noteService.items$ | async); track item) {
-            <li>
-                {{ item['title'] }}
-            </li>
-            }
-        </ul>
-        <!-- @for (note of noteList; track note) {
-            <app-note [note]="note"></app-note>
-          } -->
+        @for (note of getList(); track note) {
+        <app-note [note]="note"></app-note>
+        }
     </div>
 </div>
